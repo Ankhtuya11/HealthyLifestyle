@@ -1,5 +1,5 @@
 import Image from 'next/image'
-
+import CustomWebcam from '@/components/CustomWebcam'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -15,6 +15,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            <CustomWebcam/>
             By{' '}
             <Image
               src="/vercel.svg"
