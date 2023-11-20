@@ -1,51 +1,73 @@
 "use client"
 import Webcam from "react-webcam";
 import { useCallback, useRef, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import axios from 'axios';
 
 export default function CustomWebcam() {
-    const [mirrored, setMirrored] = useState(false);
-    const webcamRef = useRef(null);
-    const [imgSrc, setImgSrc] = useState(null);
-    const capture = useCallback(() => {
-        const imageSrc = webcamRef.current.getScreenshot();
-        setImgSrc(imageSrc);
-      }, [webcamRef]);
-      const retake = () => {
-        setImgSrc(null);
-      };
+  const [imgSrc, setImgSrc] = useState(null);
+  const [txtData, setTxtData] = useState("");
+  const webcamRef = useRef(null);
+
+  const capture = useCallback(async () => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    setImgSrc(imageSrc);
+
+    // Convert base64 image data to a Blob
+    const blob = await fetch(imageSrc).then(res => res.blob());
+
+    // Create a FormData object and append the Blob with a unique filename
+    const formData = new FormData();
+    formData.append("image", blob, "captured-photo.jpg");
+
+    // Call the OCR API
+    try {
+      const response = await axios.post('https://ocr-extract-text.p.rapidapi.com/ocr', formData, {
+        headers: {
+          'X-RapidAPI-Key': '29bdb8def0msh2232763686ee127p1a01e0jsn768eb688f70c',
+          'X-RapidAPI-Host': 'ocr-extract-text.p.rapidapi.com',
+        },
+      });
+
+      console.log(response.data.text);
+      const txtData = response.data.text
+      setTxtData(txtData)
+    } catch (error) {
+      console.error('Error sending image to OCR API:', error);
+    }
+  }, [webcamRef]);
+
   return (
     <div className="container">
-    {imgSrc ? (
-        <img src={imgSrc} alt="webcam" />
-      ) : (
-        <Webcam
-          height={600}
-          width={600}
-          ref={webcamRef}
-          forceScreenshotSourceSize
-          videoConstraints 
-          mirrored={mirrored}
-          screenshotFormat="image/jpeg"
-          screenshotQuality={0.8}
-        />
-      )}
-    <div className="controls">
-      <div>
-        <input
-          type="checkbox"
-          checked={mirrored}
-          onChange={(e) => setMirrored(e.target.checked)}
-        />
-        <label>Mirror</label>
+      <Webcam
+        height={600}
+        width={600}
+        forceScreenshotSourceSize
+        videoConstraints={{
+          height: 720,
+          width: 1280
+        }}
+        ref={webcamRef}
+        screenshotFormat="image/jpeg"
+        screenshotQuality={0.8}
+      />
+      <div className="btn-container">
+        {!imgSrc && <button onClick={capture}>Capture photo</button>}
       </div>
+
+      {txtData ? (
+        <p>{txtData}</p>
+      ) : (
+        <p>No image captured</p>
+      )}
+
+      {/* Move the Link component inside the div to wrap the button */}
+      {/* {imgSrc && (
+        <Link href={{ pathname: '/captured', query: { name: imgSrc } }}>
+          <a>Go to Captured Page</a>
+        </Link>
+      )} */}
     </div>
-    <div className="btn-container">
-    {imgSrc ? (
-          <button onClick={retake}>Retake photo</button>
-        ) : (
-          <button onClick={capture}>Capture photo</button>
-        )}
-    </div>
-  </div>
-  )
+  );
 }
