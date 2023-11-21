@@ -25,7 +25,7 @@ export default function CustomWebcam() {
     try {
       const response = await axios.post('https://ocr-extract-text.p.rapidapi.com/ocr', formData, {
         headers: {
-          'X-RapidAPI-Key': '29bdb8def0msh2232763686ee127p1a01e0jsn768eb688f70c',
+          'X-RapidAPI-Key': 'c0a2d3b7a8mshe348abd873a4e4ep17385djsn44c42053c9a5',
           'X-RapidAPI-Host': 'ocr-extract-text.p.rapidapi.com',
         },
       });
@@ -37,6 +37,9 @@ export default function CustomWebcam() {
       console.error('Error sending image to OCR API:', error);
     }
   }, [webcamRef]);
+  const retake = () => {
+    setImgSrc(null);
+  };
 
   return (
     <div className="container">
@@ -53,21 +56,31 @@ export default function CustomWebcam() {
         screenshotQuality={0.8}
       />
       <div className="btn-container">
-        {!imgSrc && <button onClick={capture}>Capture photo</button>}
+        {imgSrc ? (
+          <button onClick={retake}>Retake photo</button>
+        ) : (
+          <button onClick={capture}>Capture photo</button>
+        )}
       </div>
 
-      {txtData ? (
+      {/* {txtData ? (
         <p>{txtData}</p>
       ) : (
         <p>No image captured</p>
-      )}
-
-      {/* Move the Link component inside the div to wrap the button */}
-      {/* {imgSrc && (
-        <Link href={{ pathname: '/captured', query: { name: imgSrc } }}>
-          <a>Go to Captured Page</a>
-        </Link>
       )} */}
+
+ 
+
+{imgSrc ? (
+         <Link href={{
+          pathname: "/captured",
+          query:{
+            data: txtData,
+          },
+         }}>go to captured</Link>
+        ) : (
+          <p>asda</p>
+        )}
     </div>
   );
 }
