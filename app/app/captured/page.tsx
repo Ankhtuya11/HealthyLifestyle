@@ -7,12 +7,11 @@ import axios from "axios";
 export default function Page() {
   const searchParams = useSearchParams();
   console.log(searchParams.get("data"))
-  const [txtData2, setTxtData2] = useState("");
+  const [translated, setTranslated] = useState("");
+  const txtData2 = searchParams.get("data") ?? "";
 
   useEffect(() => {
     const fetchData = async () => {
-      const dataFromSearchParams = searchParams.get("data");
-      setTxtData2(dataFromSearchParams || "");
 
       const encodedParams = new URLSearchParams();
       encodedParams.set('from', 'auto');
@@ -32,7 +31,8 @@ export default function Page() {
 
       try {
         const response = await axios.request(options);
-        console.log(response.data.trans);
+        console.log(response.data);
+        setTranslated(response.data.trans)
       } catch (error) {
         console.error(error);
       }
@@ -42,7 +42,9 @@ export default function Page() {
   }, [searchParams]);
 
   return (
-    <div>page</div>
+    <div>
+      {translated}
+    </div>
     
   );
 }
