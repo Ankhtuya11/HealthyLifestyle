@@ -17,7 +17,7 @@ export default function Page() {
       const encodedParams = new URLSearchParams();
       encodedParams.set('from', 'auto');
       encodedParams.set('to', 'en');
-      encodedParams.set('text', '"Манай төвөөр өдөрт 90-100 жолооч үйлчлүүлж байгаагаас 30 орчим нь л RFID наалгаж байна" ; Нийгэм · 12+. 24 ; Эрүүл мэнд · 218. 19 ; Хүмүүс · 19+. 26 ; Бизнес · 121.');
+      encodedParams.set('text', txtData2);
 
       const options = {
         method: 'POST',
