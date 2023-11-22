@@ -3,16 +3,17 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from 'next/navigation';
 import axios from "axios";
-
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 export default function Page() {
   const searchParams = useSearchParams();
-  console.log(searchParams.get("data"))
   const [translated, setTranslated] = useState("");
   const txtData2 = searchParams.get("data") ?? "";
 
   useEffect(() => {
     const fetchData = async () => {
-
+      
+      
       const encodedParams = new URLSearchParams();
       encodedParams.set('from', 'auto');
       encodedParams.set('to', 'en');
@@ -44,6 +45,16 @@ export default function Page() {
   return (
     <div>
       {translated}
+      {translated ? (
+         <Link href={{
+          pathname: "/result",
+          query:{
+            data: translated,
+          },
+         }}>go to resuklt</Link>
+        ) : (
+          <p>asda</p>
+        )}
     </div>
     
   );
