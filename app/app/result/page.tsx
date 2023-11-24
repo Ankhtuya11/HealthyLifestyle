@@ -13,3 +13,8 @@ export default function page() {
     </div>
   )
 }
+
+
+
+
+// https://rapidapi.com/rphrp1985/api/open-ai21
