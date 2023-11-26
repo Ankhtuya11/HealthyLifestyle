@@ -1,15 +1,20 @@
 "use client"
+import React from "react";
 import Webcam from "react-webcam";
 import { useCallback, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import axios from 'axios';
+import { Button } from "./ui/button";
 
+import Lottie from "lottie-react";
+import animationData from "@/public/assets/lottie/gradient_orb.json";
 export default function CustomWebcam() {
   const [imgSrc, setImgSrc] = useState(null);
   const [txtData, setTxtData] = useState("");
   const webcamRef = useRef(null);
-
+  
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const capture = useCallback(async () => {
     const imageSrc = webcamRef.current.getScreenshot();
     setImgSrc(imageSrc);
@@ -44,8 +49,8 @@ export default function CustomWebcam() {
   return (
     <div className="container">
       <Webcam
-        height={600}
-        width={600}
+        height={360}
+        width={640}
         forceScreenshotSourceSize
         videoConstraints={{
           height: 720,
@@ -54,24 +59,28 @@ export default function CustomWebcam() {
         ref={webcamRef}
         screenshotFormat="image/jpeg"
         screenshotQuality={0.8}
+        className="rounded-lg"
       />
       <div className="btn-container">
         {imgSrc ? (
-          <button onClick={retake}>Retake photo</button>
+          <Button onClick={retake}>Retake photo</Button>
         ) : (
-          <button onClick={capture}>Capture photo</button>
+          <Button onClick={capture}>Capture photo</Button>
         )}
       </div>
 
-      {/* {txtData ? (
-        <p>{txtData}</p>
-      ) : (
-        <p>No image captured</p>
-      )} */}
+      {txtData ? (
+            <Lottie
+              animationData={animationData}
+              className="flex justify-center items-center"
+              loop={true}
+            />
+         
+      ): (
+        <p>as</p>
+      )}
 
- 
-
-{imgSrc ? (
+{txtData ? (
          <Link href={{
           pathname: "/captured",
           query:{
