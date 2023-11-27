@@ -9,7 +9,7 @@ export default function Page() {
   const searchParams = useSearchParams();
   const [translated, setTranslated] = useState("");
   const txtData2 = searchParams.get("data") ?? "";
-
+  
   useEffect(() => {
     const fetchData = async () => {
       
