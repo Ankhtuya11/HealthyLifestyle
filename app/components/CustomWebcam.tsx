@@ -47,7 +47,7 @@ export default function CustomWebcam() {
   };
 
   return (
-    <div className="container">
+    <div className="container flex flex-col items-center justify-center mt-8">
       <Webcam
         height={360}
         width={640}
