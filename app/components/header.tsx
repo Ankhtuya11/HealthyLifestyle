@@ -23,16 +23,16 @@ export default function Header() {
             <nav className="mt-4 sm:hidden">
               {/* Add your dropdown links here */}
               <ModeToggle/>
-              <Link href="/" className="block py-2 px-4  hover:bg-gray-700 transition duration-300">Home</Link>
-              <Link href="/about" className="block py-2 px-4  hover:bg-gray-700 transition duration-300">About</Link>
+              <Link href="#" className="block py-2 px-4  hover:bg-gray-700 transition duration-300">Home</Link>
+              <Link href="#" className="block py-2 px-4  hover:bg-gray-700 transition duration-300">About</Link>
               <Link href="#" className="block py-2 px-4  hover:bg-gray-700 transition duration-300">Services</Link>
               <Link href="#" className="block py-2 px-4  hover:bg-gray-700 transition duration-300">Contact</Link>
             </nav>
           )}
           <nav className="mt-6 sm:mt-0 hidden sm:flex flex-col sm:flex-row sm:space-x-8">
             <ModeToggle/>
-            <Link href="/" className="hover:text-gray-300 transition duration-300 mt-1 text-xl">Home</Link>
-            <Link href="/about" className="hover:text-gray-300 transition duration-300 mt-1 text-xl">About</Link>
+            <Link href="#" className="hover:text-gray-300 transition duration-300 mt-1 text-xl">Home</Link>
+            <Link href="#" className="hover:text-gray-300 transition duration-300 mt-1 text-xl">About</Link>
             <Link href="#" className="hover:text-gray-300 transition duration-300 mt-1 text-xl">Services</Link>
             <Link href="#" className="hover:text-gray-300 transition duration-300 mt-1 text-xl">Contact</Link>
           </nav>
