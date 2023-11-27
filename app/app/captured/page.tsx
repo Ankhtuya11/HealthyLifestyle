@@ -10,17 +10,13 @@ export default function Page() {
   const searchParams = useSearchParams();
   const txtData2 = searchParams.get("data") || "";
   const [translated, setTranslated] = useState("");
-<<<<<<< HEAD
-  const txtData2 = searchParams.get("data") ?? "";
-  
-  useEffect(() => {
-    const fetchData = async () => {
-      
-      
-      const encodedParams = new URLSearchParams();
-      encodedParams.set('from', 'auto');
-      encodedParams.set('to', 'en');
-      encodedParams.set('text', txtData2);
+  const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(true); // Set loading to true initially
+  const [error, setError] = useState(null);
+
+  const fetchTranslation = useCallback(async () => {
+    try {
+      setError(null);
 
       const response = await axios.post('https://google-translate113.p.rapidapi.com/api/v1/translator/text', {
         from: 'auto',
@@ -39,7 +35,6 @@ export default function Page() {
     } 
   }, [txtData2]);
 
->>>>>>> e8970e1e8e255c937b6b08d19a4d5ce4ee525a53
   useEffect(() => {
     if (txtData2) {
       fetchTranslation();
