@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import axios from 'axios';
 import { Button } from "./ui/button";
+
 import Lottie from "lottie-react";
 import animationData from "@/public/assets/lottie/gradient_orb.json";
 export default function CustomWebcam() {
@@ -29,7 +30,7 @@ export default function CustomWebcam() {
     try {
       const response = await axios.post('https://ocr-extract-text.p.rapidapi.com/ocr', formData, {
         headers: {
-          'X-RapidAPI-Key': '8d90f080aamsh10fe48af52232fdp1bf25ajsn25edb2bd277b',
+          'X-RapidAPI-Key': '2fafd55848mshe2b9996f8085a32p1f512ajsnc4a107eefd2c',
           'X-RapidAPI-Host': 'ocr-extract-text.p.rapidapi.com',
         },
       });
