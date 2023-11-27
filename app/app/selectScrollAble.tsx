@@ -13,8 +13,8 @@ import {
 export function SelectScrollable() {
   return (
     <Select>
-      <SelectTrigger className="w-[280px]">
-        <SelectValue placeholder="Select a timezone" />
+      <SelectTrigger className="w-[280px] border-4 border-indigo-300">
+        <SelectValue placeholder="Select Language" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>

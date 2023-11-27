@@ -8,11 +8,11 @@ export default function Header() {
         setMenuOpen(!menuOpen);
       };
   return (
-   <header className="p-4">
+   <header className="p-4 mb-6">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div className="text-3xl font-extrabold">
-            <span className="text-yellow-300">Nie</span> Website
+            <span className="text-green-300">CYD</span> Website
           </div>
           <div className="sm:hidden">
             <button onClick={toggleMenu}>

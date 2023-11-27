@@ -6,7 +6,7 @@ import Link from "next/link";
 import Lottie from "lottie-react";
 import animationData from "@/public/assets/lottie/gradient_orb.json";
 import { SelectScrollable } from "../selectScrollAble";
-
+import { TextareaWithText } from "@/components/TextAreaWithText";
 export default function Page() {
   const searchParams = useSearchParams();
   const txtData2 = searchParams.get("data") || "";
@@ -70,15 +70,16 @@ export default function Page() {
   }, [translated]);
 
   return (
-    <div>
+    <div className="p-10">
       <SelectScrollable/>
+      <div className="mb-5"></div>
       {loading && (
         <div className="flex justify-center items-center">
           <Lottie animationData={animationData} loop={true} />
         </div>
       )}
       
-      {result && <p>{result}</p>}
+      {result && <TextareaWithText result={result}/>}
       {error && <p className="text-red-500">{error}</p>}
     </div>
   );

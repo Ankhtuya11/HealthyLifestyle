@@ -58,26 +58,16 @@ export default function CustomWebcam() {
         ref={webcamRef}
         screenshotFormat="image/jpeg"
         screenshotQuality={0.8}
-        className="rounded-lg"
+        className="rounded-lg mb-4"
       />
       <div className="btn-container">
         {imgSrc ? (
-          <Button onClick={retake}>Retake photo</Button>
+          <Button onClick={retake} className="w-96">Retake photo</Button>
         ) : (
-          <Button onClick={capture}>Capture photo</Button>
+          <Button onClick={capture} className="w-96">Capture photo</Button>
         )}
       </div>
 
-      {txtData ? (
-            <Lottie
-              animationData={animationData}
-              className="flex justify-center items-center"
-              loop={true}
-            />
-         
-      ): (
-        <p>as</p>
-      )}
 
 {txtData ? (
          <Link href={{
@@ -85,9 +75,9 @@ export default function CustomWebcam() {
           query:{
             data: txtData,
           },
-         }}>go to captured</Link>
+         }}><Button onClick={capture} className="w-96 mt-4">Check food</Button></Link>
         ) : (
-          <p>asda</p>
+          <p></p>
         )}
     </div>
   );
