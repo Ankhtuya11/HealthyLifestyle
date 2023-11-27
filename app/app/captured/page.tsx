@@ -5,6 +5,7 @@ import axios from "axios";
 import Link from "next/link";
 import Lottie from "lottie-react";
 import animationData from "@/public/assets/lottie/gradient_orb.json";
+import { SelectScrollable } from "../selectScrollAble";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -70,11 +71,13 @@ export default function Page() {
 
   return (
     <div>
+      <SelectScrollable/>
       {loading && (
         <div className="flex justify-center items-center">
           <Lottie animationData={animationData} loop={true} />
         </div>
       )}
+      
       {result && <p>{result}</p>}
       {error && <p className="text-red-500">{error}</p>}
     </div>
