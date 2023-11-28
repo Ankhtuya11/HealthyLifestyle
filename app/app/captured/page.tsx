@@ -60,6 +60,9 @@ export default function Page() {
     } catch (error) {
       // Handle second translation error
     }
+    finally {
+      setLoading(false);
+    }
   }, [result, selectedLanguage]);
 
   const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -90,9 +93,7 @@ export default function Page() {
           setResult(response.data.response);
         } catch (error) {
           // Handle GPT error
-        } finally {
-          setLoading(false);
-        }
+        } 
       };
 
       fetchGPT();
