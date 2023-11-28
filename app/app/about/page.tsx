@@ -41,9 +41,10 @@ export default function page() {
       <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
         <Image className="object-cover w-full h-56 md:h-64 xl:h-80" width={560} height={560} src={aa11} alt="" />
         <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-          <p className="mb-4 text-lg font-bold text-gray-100">The Starry Night</p>
+          <p className="mb-4 text-lg font-bold text-gray-100">Хүнсний шошго </p>
           <p className="text-sm tracking-wide text-gray-300">
-            Vincent Van Gogh’s most popular painting, The Starry Night was created by Van Gogh at the asylum in Saint-Rémy, where he’d committed himself in 1889.
+          Хүнсний шошго нь хоол тэжээлийн нарийвчилсан мэдээллийг харуулж, хэрэглэгчдэд хоол тэжээлийн хэрэгцээ, эрүүл мэндийн зорилгодоо нийцүүлэн сонголт хийхэд тусалдаг.
+
           </p>
         </div>
       </div>
@@ -52,9 +53,10 @@ export default function page() {
       <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
         <Image className="object-cover w-full h-56 md:h-64 xl:h-80" width={560} height={560} src={aa1} alt="" />
         <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-          <p className="mb-4 text-lg font-bold text-gray-100">The Kiss</p>
+          <p className="mb-4 text-lg font-bold text-gray-100">Хоол хүнс</p>
           <p className="text-sm tracking-wide text-gray-300">
-            Opulently gilded and extravagantly patterned, The Kiss, Gustav Klimt’s fin-de-siècle portrayal of intimacy, is a mix of Symbolism and Vienna Jugendstil, the Austrian variant of Art Nouveau.
+          Таны идэж буй хоол хүнс таны тархины үйл ажиллагаа болон сэтгэл зүйд нөлөөлдөг гэдгийг та мэдэх үү? Мөн түүний бүрэн бүтэн байдал насжилт нь шууд л бидний идэж буй хоол хүнснээс хамаардаг.
+
           </p>
         </div>
       </div>
@@ -63,9 +65,9 @@ export default function page() {
       <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
         <Image className="object-cover w-full h-56 md:h-64 xl:h-80" width={560} height={560} src={aa} alt="" />
         <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-          <p className="mb-4 text-lg font-bold text-gray-100">The Harvesters</p>
+          <p className="mb-4 text-lg font-bold text-gray-100">Эрүүл хооллолт</p>
           <p className="text-sm tracking-wide text-gray-300">
-            Bruegel’s fanfare for the common man is considered one of the defining works of Western art. This composition was one of six created on the theme of the seasons.
+          Эрүүл хооллолт нь хоол хүнсээ зөв танин мэдэх, зөв хооллох дадалд суралцах, эзэмшихээс эхлэх бөгөөд Таны юу идэж байгаа төдийгүй, ямар хэмжээгээр идэж байгаагаас ихээхэн шалтгаална.
           </p>
         </div>
       </div>
