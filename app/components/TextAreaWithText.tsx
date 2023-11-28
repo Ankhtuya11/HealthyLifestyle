@@ -8,7 +8,7 @@ interface TextareaWithTextProps {
 export function TextareaWithText({secondTranslated}: TextareaWithTextProps) {
   return (
     <div className="grid w-full gap-1.5">
-      <Label htmlFor="message-2">Result</Label>
+      <Label htmlFor="message-2" className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Result</Label>
       <Textarea placeholder="Type your message here." id="message-2" value={secondTranslated} className="h-96 border-8 border-indigo-300"/>
       <p className="text-sm text-muted-foreground">
         Your message will be copied to the support team.

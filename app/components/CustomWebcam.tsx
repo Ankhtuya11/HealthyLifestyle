@@ -29,7 +29,7 @@ export default function CustomWebcam() {
     try {
       const response = await axios.post('https://ocr-extract-text.p.rapidapi.com/ocr', formData, {
         headers: {
-          'X-RapidAPI-Key': '8d90f080aamsh10fe48af52232fdp1bf25ajsn25edb2bd277b',
+          'X-RapidAPI-Key': 'e1b75410aemsh25be6f5e579bb8ap15bdacjsn098f8f344007',
           'X-RapidAPI-Host': 'ocr-extract-text.p.rapidapi.com',
         },
       });

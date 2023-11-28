@@ -82,7 +82,7 @@ export default function Page() {
           }, {
             headers: {
               'Content-Type': 'application/json',
-              'X-RapidAPI-Key': '2fafd55848mshe2b9996f8085a32p1f512ajsnc4a107eefd2c',
+              'X-RapidAPI-Key': 'e1b75410aemsh25be6f5e579bb8ap15bdacjsn098f8f344007',
               'X-RapidAPI-Host': 'chatgpt-openai1.p.rapidapi.com',
             },
           });
@@ -107,7 +107,7 @@ export default function Page() {
 
   return (
     <div className="p-10">
-      <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Language</label>
+      <label className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Select Language</label>
 <select id="countries" onChange={handleLanguageChange}
         value={selectedLanguage} className="border-4 border-indigo-300 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
   <option selected value="mn">Mongolian</option>
@@ -196,3 +196,8 @@ export default function Page() {
     </div>
   );
 }
+
+
+
+
+// https://rapidapi.com/undergroundapi-undergroundapi-default/api/google-translate113
