@@ -12,7 +12,7 @@ export default function Header() {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div className="text-3xl font-extrabold">
-            <span className="text-green-300">CYD</span> Website
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">CYD</span> Website
           </div>
           <div className="sm:hidden">
             <button onClick={toggleMenu}>

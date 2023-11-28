@@ -2,6 +2,11 @@
 import React from 'react'
 import mandakh from '../../public/assets/mandakh.jpg';
 import Image from 'next/image'; 
+import asd from '../../public/assets/salmon.jpg'
+import health from '../../public/assets/healthy-food.jpg'
+import aa from '../../public/assets/aa.png'
+import aa1 from '../../public/assets/asw.webp'
+import aa11 from '../../public/assets/wsw.webp'
 export default function page() { 
  
   return (
@@ -9,7 +14,7 @@ export default function page() {
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
   <div className="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
     <h2 className="max-w-lg mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none md:mb-6 group">
-      <span className="inline-block mb-1 sm:mb-4">
+      <span className="inline-block mb-1 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
         Бидний тухай<br className="hidden md:block" />
 
       </span>
@@ -23,7 +28,7 @@ export default function page() {
   <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
     <a href="/" aria-label="View Item">
       <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-        <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500" alt="" />
+        <Image className="object-cover w-full h-56 md:h-64 xl:h-80" width={560} height={560} src={asd} alt="" />
         <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
           <p className="mb-4 text-lg font-bold text-gray-100">ЗОРИЛГО</p>
           <p className="text-sm tracking-wide text-gray-300">
@@ -34,7 +39,7 @@ export default function page() {
     </a>
     <a href="/" aria-label="View Item">
       <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-        <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="" />
+        <Image className="object-cover w-full h-56 md:h-64 xl:h-80" width={560} height={560} src={aa11} alt="" />
         <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
           <p className="mb-4 text-lg font-bold text-gray-100">The Starry Night</p>
           <p className="text-sm tracking-wide text-gray-300">
@@ -45,7 +50,7 @@ export default function page() {
     </a>
     <a href="/" aria-label="View Item">
       <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-        <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="" />
+        <Image className="object-cover w-full h-56 md:h-64 xl:h-80" width={560} height={560} src={aa1} alt="" />
         <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
           <p className="mb-4 text-lg font-bold text-gray-100">The Kiss</p>
           <p className="text-sm tracking-wide text-gray-300">
@@ -56,7 +61,7 @@ export default function page() {
     </a>
     <a href="/" aria-label="View Item">
       <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-        <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="" />
+        <Image className="object-cover w-full h-56 md:h-64 xl:h-80" width={560} height={560} src={aa} alt="" />
         <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
           <p className="mb-4 text-lg font-bold text-gray-100">The Harvesters</p>
           <p className="text-sm tracking-wide text-gray-300">
