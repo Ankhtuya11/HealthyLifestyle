@@ -7,7 +7,8 @@ import axios from "axios";
 import Lottie from "lottie-react";
 import animationData from "@/public/assets/lottie/gradient_orb.json";
 import { TextareaWithText } from "@/components/TextAreaWithText";
-
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 export default function Page() {
   const searchParams = useSearchParams();
   const txtData2 = searchParams.get("data") || "";
@@ -29,7 +30,7 @@ export default function Page() {
       }, {
         headers: {
           'Content-Type': 'application/json',
-          'X-RapidAPI-Key': 'c0a2d3b7a8mshe348abd873a4e4ep17385djsn44c42053c9a5',
+          'X-RapidAPI-Key': '410afb4c82mshb34b7444cd2f5c0p166e4fjsn743ae8cd6c62',
           'X-RapidAPI-Host': 'google-translate113.p.rapidapi.com',
         },
       });
@@ -51,7 +52,7 @@ export default function Page() {
       }, {
         headers: {
           'Content-Type': 'application/json',
-          'X-RapidAPI-Key': 'c0a2d3b7a8mshe348abd873a4e4ep17385djsn44c42053c9a5',
+          'X-RapidAPI-Key': '410afb4c82mshb34b7444cd2f5c0p166e4fjsn743ae8cd6c62',
           'X-RapidAPI-Host': 'google-translate113.p.rapidapi.com',
         },
       });
@@ -85,7 +86,7 @@ export default function Page() {
           }, {
             headers: {
               'Content-Type': 'application/json',
-              'X-RapidAPI-Key': 'e1b75410aemsh25be6f5e579bb8ap15bdacjsn098f8f344007',
+              'X-RapidAPI-Key': 'f1f842cab2msh0946c87ea15c3a2p17ebe0jsn645c7b089abc',
               'X-RapidAPI-Host': 'chatgpt-openai1.p.rapidapi.com',
             },
           });
@@ -193,6 +194,8 @@ export default function Page() {
       )}
 
       {secondTranslated && <TextareaWithText secondTranslated={secondTranslated} />}
+      <Link href={{pathname: "/"}}> <Button>Go Back</Button></Link>
+      
       {error && <p className="text-red-500">{error}</p>}
     </div>
   );
