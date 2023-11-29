@@ -20,7 +20,7 @@ export default function page() {
       </span>
       <div className="h-1 ml-auto duration-300 origin-left transform bg-deep-purple-accent-400 scale-x-30 group-hover:scale-x-100"></div>
     </h2>
-    <p className="text-gray-700 lg:text-sm lg:max-w-md">
+    <p className=" lg:text-sm lg:max-w-md">
       "Class is dead", says Foucault; however, according to Reicher, it is not so much className that is dead, but rather the absurdity, and some would say the paradigm, of className. However, the subject is interpolated into a postpatriarchialist
       dialectic theory that includes consciousness as a totality.
     </p>

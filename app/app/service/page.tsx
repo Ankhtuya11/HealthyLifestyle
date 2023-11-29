@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function page() {
   return (
-    <section className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
+    <section className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] ">
    <div className="container mx-auto">
       <div className="-mx-4 flex flex-wrap">
          <div className="w-full px-4">
@@ -12,7 +12,7 @@ export default function page() {
                Our Services
                </span>
                <h2
-                  className="text-dark dark:text-white mb-3 text-3xl leading-[1.2] font-bold sm:text-4xl md:text-[40px]"
+                  className="mb-3 text-3xl leading-[1.2] font-bold sm:text-4xl md:text-[40px]"
                   >
                   What We Offer
                </h2>
@@ -26,7 +26,7 @@ export default function page() {
       <div className="-mx-4 flex flex-wrap">
          <div className="w-full px-4 md:w-1/2 lg:w-1/3">
             <div
-               className="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
+               className="mb-9 rounded-[20px]  p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
                >
                <div
                   className="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
@@ -44,10 +44,10 @@ export default function page() {
                         />
                   </svg>
                </div>
-               <h4 className="text-dark dark:text-white mb-[14px] text-2xl font-semibold">
+               <h4 className=" mb-[14px] text-2xl font-semibold">
                   Refreshing Design
                </h4>
-               <p className="text-body-color dark:text-dark-6">
+               <p className="text-body-color">
                   We dejoy working with discerning clients, people for whom
                   qualuty, service, integrity & aesthetics.
                </p>
@@ -55,7 +55,7 @@ export default function page() {
          </div>
          <div className="w-full px-4 md:w-1/2 lg:w-1/3">
             <div
-               className="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
+               className="mb-9 rounded-[20px] p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
                >
                <div
                   className="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
@@ -79,14 +79,14 @@ export default function page() {
                   Based on Tailwind CSS
                </h4>
                <p className="text-body-color dark:text-dark-6">
-                  We dejoy working with discerning clients, people for whom
+                  We enjoy working with discerning clients, people for whom
                   qualuty, service, integrity & aesthetics.
                </p>
             </div>
          </div>
          <div className="w-full px-4 md:w-1/2 lg:w-1/3">
             <div
-               className="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
+               className="mb-9 rounded-[20px] p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
                >
                <div
                   className="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
@@ -127,7 +127,7 @@ export default function page() {
          </div>
          <div className="w-full px-4 md:w-1/2 lg:w-1/3">
             <div
-               className="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
+               className="mb-9 rounded-[20px] p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
                >
                <div
                   className="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
@@ -160,7 +160,7 @@ export default function page() {
          </div>
          <div className="w-full px-4 md:w-1/2 lg:w-1/3">
             <div
-               className="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
+               className="mb-9 rounded-[20px] p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
                >
                <div
                   className="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
@@ -189,7 +189,7 @@ export default function page() {
          </div>
          <div className="w-full px-4 md:w-1/2 lg:w-1/3">
             <div
-               className="mb-9 rounded-[20px] bg-white dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
+               className="mb-9 rounded-[20px] p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
                >
                <div
                   className="bg-primary mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl"
