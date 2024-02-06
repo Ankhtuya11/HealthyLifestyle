@@ -8,39 +8,46 @@ import axios from 'axios';
 import { Button } from "./ui/button";
 import Lottie from "lottie-react";
 import animationData from "@/public/assets/lottie/gradient_orb.json";
+
+// ... (imports)
+
 export default function CustomWebcam() {
   const [imgSrc, setImgSrc] = useState(null);
   const [txtData, setTxtData] = useState("");
   const webcamRef = useRef(null);
   
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const capture = useCallback(async () => {
-    const imageSrc = webcamRef.current.getScreenshot();
-    setImgSrc(imageSrc);
+    if (webcamRef.current) {
+      const imageSrc = webcamRef.current.getScreenshot();
+      setImgSrc(imageSrc);
 
-    // Convert base64 image data to a Blob
-    const blob = await fetch(imageSrc).then(res => res.blob());
+      // Convert base64 image data to a Blob
+      const blob = await fetch(imageSrc).then(res => res.blob());
 
-    // Create a FormData object and append the Blob with a unique filename
-    const formData = new FormData();
-    formData.append("image", blob, "captured-photo.jpg");
+      // Create a FormData object and append the Blob with a unique filename
+      const formData = new FormData();
+      formData.append("image", blob, "captured-photo.jpg");
 
-    // Call the OCR API
-    try {
-      const response = await axios.post('https://ocr-extract-text.p.rapidapi.com/ocr', formData, {
-        headers: {
-          'X-RapidAPI-Key': '4a7f4ce95amsh54c1b82039f0a6fp145eeejsnb3000ad01125',
-          'X-RapidAPI-Host': 'ocr-extract-text.p.rapidapi.com',
-        },
-      });
+      // Call the OCR API
+      try {
+        const response = await axios.post('https://ocr-extract-text.p.rapidapi.com/ocr', formData, {
+          headers: {
+            'X-RapidAPI-Key': '4a7f4ce95amsh54c1b82039f0a6fp145eeejsnb3000ad01125',
+            'X-RapidAPI-Host': 'ocr-extract-text.p.rapidapi.com',
+          },
+        });
 
-      console.log(response.data.text);
-      const txtData = response.data.text
-      setTxtData(txtData)
-    } catch (error) {
-      console.error('Error sending image to OCR API:', error);
+        console.log(response.data.text);
+        const txtData = response.data.text;
+        setTxtData(txtData);
+      } catch (error) {
+        console.error('Error sending image to OCR API:', error);
+      }
     }
   }, [webcamRef]);
+
   const retake = () => {
     setImgSrc(null);
   };
@@ -68,17 +75,18 @@ export default function CustomWebcam() {
         )}
       </div>
 
-
-{txtData ? (
-         <Link href={{
+      {txtData ? (
+        <Link href={{
           pathname: "/captured",
-          query:{
+          query: {
             data: txtData,
           },
-         }}><Button onClick={capture} className="w-96 mt-4">Check food</Button></Link>
-        ) : (
-          <p></p>
-        )}
+        }}>
+          <Button onClick={retake} className="w-96 mt-4">Check food</Button>
+        </Link>
+      ) : (
+        <p></p>
+      )}
     </div>
   );
 }
