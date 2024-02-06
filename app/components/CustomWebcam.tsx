@@ -12,41 +12,43 @@ import animationData from "@/public/assets/lottie/gradient_orb.json";
 // ... (imports)
 
 export default function CustomWebcam() {
-  const [imgSrc, setImgSrc] = useState(null);
+  const [imgSrc, setImgSrc] = useState<string | null>(null);
   const [txtData, setTxtData] = useState("");
-  const webcamRef = useRef(null);
-  
+  const webcamRef = useRef<Webcam | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const capture = useCallback(async () => {
     if (webcamRef.current) {
       const imageSrc = webcamRef.current.getScreenshot();
       setImgSrc(imageSrc);
-
-      // Convert base64 image data to a Blob
-      const blob = await fetch(imageSrc).then(res => res.blob());
-
-      // Create a FormData object and append the Blob with a unique filename
-      const formData = new FormData();
-      formData.append("image", blob, "captured-photo.jpg");
-
-      // Call the OCR API
-      try {
-        const response = await axios.post('https://ocr-extract-text.p.rapidapi.com/ocr', formData, {
-          headers: {
-            'X-RapidAPI-Key': '4a7f4ce95amsh54c1b82039f0a6fp145eeejsnb3000ad01125',
-            'X-RapidAPI-Host': 'ocr-extract-text.p.rapidapi.com',
-          },
-        });
-
-        console.log(response.data.text);
-        const txtData = response.data.text;
-        setTxtData(txtData);
-      } catch (error) {
-        console.error('Error sending image to OCR API:', error);
+  
+      if (imageSrc) { // Check if imageSrc is not null
+        // Convert base64 image data to a Blob
+        const blob = await fetch(imageSrc).then(res => res.blob());
+  
+        // Create a FormData object and append the Blob with a unique filename
+        const formData = new FormData();
+        formData.append("image", blob, "captured-photo.jpg");
+  
+        // Call the OCR API
+        try {
+          const response = await axios.post('https://ocr-extract-text.p.rapidapi.com/ocr', formData, {
+            headers: {
+              'X-RapidAPI-Key': '4a7f4ce95amsh54c1b82039f0a6fp145eeejsnb3000ad01125',
+              'X-RapidAPI-Host': 'ocr-extract-text.p.rapidapi.com',
+            },
+          });
+  
+          console.log(response.data.text);
+          const txtData = response.data.text;
+          setTxtData(txtData);
+        } catch (error) {
+          console.error('Error sending image to OCR API:', error);
+        }
       }
     }
   }, [webcamRef]);
+  
 
   const retake = () => {
     setImgSrc(null);
