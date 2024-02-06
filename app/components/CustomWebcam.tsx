@@ -18,7 +18,7 @@ export default function CustomWebcam() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const capture = useCallback(async () => {
-    if (webcamRef.current) {
+    if (webcamRef.current !== null && typeof webcamRef.current !== 'undefined') {
       const imageSrc = webcamRef.current.getScreenshot();
       setImgSrc(imageSrc);
   
