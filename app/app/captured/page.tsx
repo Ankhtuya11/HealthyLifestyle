@@ -220,8 +220,10 @@ export default function Page() {
 
 
 // https://rapidapi.com/undergroundapi-undergroundapi-default/api/google-translate113
+//2fafd55848mshe2b9996f8085a32p1f512ajsnc4a107eefd2c
 
 // https://rapidapi.com/CyberPulse/api/chatgpt-openai1
 
 
 // https://rapidapi.com/rphrp1985/api/chatgpt-42 bard
+//2fafd55848mshe2b9996f8085a32p1f512ajsnc4a107eefd2c
