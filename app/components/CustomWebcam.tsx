@@ -79,7 +79,7 @@ export default function CustomWebcam() {
           <Button onClick={retake} className="w-96">Retake photo</Button>
         ) : (
           <>
-          <Button onClick={toggleCameraFacingMode} className="w-96">Switch Camera</Button>
+          <Button onClick={toggleCameraFacingMode} className="w-96">Switch Camera</Button> <br/>
           <Button onClick={capture} className="w-96 mt-4">Capture photo</Button>
           </>
         )}
