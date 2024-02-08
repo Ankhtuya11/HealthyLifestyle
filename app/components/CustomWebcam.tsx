@@ -104,3 +104,5 @@ export default function CustomWebcam() {
 
 // https://rapidapi.com/iq.faceok/api/ocr-extract-text
 
+//  key: f1f842cab2msh0946c87ea15c3a2p17ebe0jsn645c7b089abc
+// 2fafd55848mshe2b9996f8085a32p1f512ajsnc4a107eefd2c
