@@ -34,7 +34,7 @@ export default function CustomWebcam() {
         try {
           const response = await axios.post('https://ocr-extract-text.p.rapidapi.com/ocr', formData, {
             headers: {
-              'X-RapidAPI-Key': '4a7f4ce95amsh54c1b82039f0a6fp145eeejsnb3000ad01125',
+              'X-RapidAPI-Key': '45c296c2f9mshc202be2d5d21948p154b68jsnd4a9c827de1f',
               'X-RapidAPI-Host': 'ocr-extract-text.p.rapidapi.com',
             },
           });
@@ -92,3 +92,6 @@ export default function CustomWebcam() {
     </div>
   );
 }
+
+
+// https://rapidapi.com/iq.faceok/api/ocr-extract-text

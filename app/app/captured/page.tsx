@@ -30,7 +30,7 @@ export default function Page() {
       }, {
         headers: {
           'Content-Type': 'application/json',
-          'X-RapidAPI-Key': '410afb4c82mshb34b7444cd2f5c0p166e4fjsn743ae8cd6c62',
+          'X-RapidAPI-Key': '45c296c2f9mshc202be2d5d21948p154b68jsnd4a9c827de1f',
           'X-RapidAPI-Host': 'google-translate113.p.rapidapi.com',
         },
       });
@@ -52,7 +52,7 @@ export default function Page() {
       }, {
         headers: {
           'Content-Type': 'application/json',
-          'X-RapidAPI-Key': '410afb4c82mshb34b7444cd2f5c0p166e4fjsn743ae8cd6c62',
+          'X-RapidAPI-Key': '45c296c2f9mshc202be2d5d21948p154b68jsnd4a9c827de1f',
           'X-RapidAPI-Host': 'google-translate113.p.rapidapi.com',
         },
       });
@@ -86,7 +86,7 @@ export default function Page() {
           }, {
             headers: {
               'Content-Type': 'application/json',
-              'X-RapidAPI-Key': 'f1f842cab2msh0946c87ea15c3a2p17ebe0jsn645c7b089abc',
+              'X-RapidAPI-Key': '45c296c2f9mshc202be2d5d21948p154b68jsnd4a9c827de1f',
               'X-RapidAPI-Host': 'chatgpt-openai1.p.rapidapi.com',
             },
           });
