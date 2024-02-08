@@ -58,6 +58,7 @@ export default function Page() {
       });
 
       setSecondTranslated(prevState => response.data.trans);
+      console.log(response.data.trans)
     } catch (error) {
       // Handle second translation error
     }
@@ -78,28 +79,42 @@ export default function Page() {
   }, [txtData2, fetchTranslation]);
 
   useEffect(() => {
-    if (translated) {
-      const fetchGPT = async () => {
-        try {
-          const response = await axios.post('https://chatgpt-openai1.p.rapidapi.com/ask', {
-            query: `${translated} give me only pros and cons of this food`,
-          }, {
-            headers: {
-              'Content-Type': 'application/json',
-              'X-RapidAPI-Key': '45c296c2f9mshc202be2d5d21948p154b68jsnd4a9c827de1f',
-              'X-RapidAPI-Host': 'chatgpt-openai1.p.rapidapi.com',
-            },
-          });
+    const fetchData = async () => {
+        if (translated) {
+            const options = {
+                method: 'POST',
+                url: 'https://chatgpt-42.p.rapidapi.com/geminipro',
+                headers: {
+                    'content-type': 'application/json',
+                    'X-RapidAPI-Key': 'c0a2d3b7a8mshe348abd873a4e4ep17385djsn44c42053c9a5',
+                    'X-RapidAPI-Host': 'chatgpt-42.p.rapidapi.com'
+                },
+                data: {
+                    messages: [
+                        {
+                            role: 'user',
+                            content: `${translated} give me only pros and cons of this food`
+                        }
+                    ],
+                    web_access: false
+                }
+            };
 
-          setResult(response.data.response);
-        } catch (error) {
-          // Handle GPT error
-        } 
-      };
+            try {
+                const response = await axios.request(options);
+                console.log(response.data.result);
+                setResult(response.data.result)
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    };
 
-      fetchGPT();
-    }
-  }, [translated]);
+    fetchData();
+}, [translated]);
+
+
+  
 
   useEffect(() => {
     if (result) {
@@ -205,3 +220,8 @@ export default function Page() {
 
 
 // https://rapidapi.com/undergroundapi-undergroundapi-default/api/google-translate113
+
+// https://rapidapi.com/CyberPulse/api/chatgpt-openai1
+
+
+// https://rapidapi.com/rphrp1985/api/chatgpt-42 bard

@@ -12,6 +12,7 @@ import animationData from "@/public/assets/lottie/gradient_orb.json";
 // ... (imports)
 
 export default function CustomWebcam() {
+  const [cameraFacingMode, setCameraFacingMode] = useState('user');
   const [imgSrc, setImgSrc] = useState<string | null>(null);
   const [txtData, setTxtData] = useState("");
   const webcamRef = useRef<Webcam | null>(null);
@@ -49,6 +50,9 @@ export default function CustomWebcam() {
     }
   }, [webcamRef]);
   
+  const toggleCameraFacingMode = () => {
+    setCameraFacingMode(prevMode => (prevMode === 'user' ? 'environment' : 'user'));
+  };
 
   const retake = () => {
     setImgSrc(null);
@@ -62,7 +66,8 @@ export default function CustomWebcam() {
         forceScreenshotSourceSize
         videoConstraints={{
           height: 720,
-          width: 1280
+          width: 1280,
+          facingMode: cameraFacingMode
         }}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
@@ -73,7 +78,10 @@ export default function CustomWebcam() {
         {imgSrc ? (
           <Button onClick={retake} className="w-96">Retake photo</Button>
         ) : (
-          <Button onClick={capture} className="w-96">Capture photo</Button>
+          <>
+          <Button onClick={toggleCameraFacingMode} className="w-96">Switch Camera</Button>
+          <Button onClick={capture} className="w-96 mt-4">Capture photo</Button>
+          </>
         )}
       </div>
 
@@ -84,7 +92,7 @@ export default function CustomWebcam() {
             data: txtData,
           },
         }}>
-          <Button onClick={retake} className="w-96 mt-4">Check food</Button>
+          <Button className="w-96 mt-4">Check food</Button>
         </Link>
       ) : (
         <p></p>
@@ -95,3 +103,4 @@ export default function CustomWebcam() {
 
 
 // https://rapidapi.com/iq.faceok/api/ocr-extract-text
+
