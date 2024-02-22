@@ -52,7 +52,7 @@ export default function Page() {
       }, {
         headers: {
           'Content-Type': 'application/json',
-          'X-RapidAPI-Key': '45c296c2f9mshc202be2d5d21948p154b68jsnd4a9c827de1f',
+          'X-RapidAPI-Key': '2fafd55848mshe2b9996f8085a32p1f512ajsnc4a107eefd2c',
           'X-RapidAPI-Host': 'google-translate113.p.rapidapi.com',
         },
       });
@@ -81,37 +81,34 @@ export default function Page() {
   useEffect(() => {
     const fetchData = async () => {
         if (translated) {
-            const options = {
-                method: 'POST',
-                url: 'https://chatgpt-42.p.rapidapi.com/geminipro',
-                headers: {
-                    'content-type': 'application/json',
-                    'X-RapidAPI-Key': 'c0a2d3b7a8mshe348abd873a4e4ep17385djsn44c42053c9a5',
-                    'X-RapidAPI-Host': 'chatgpt-42.p.rapidapi.com'
-                },
-                data: {
-                    messages: [
-                        {
-                            role: 'user',
-                            content: `${translated} give me only pros and cons of this food`
-                        }
-                    ],
-                    web_access: false
-                }
-            };
+          const axios = require('axios');
 
-            try {
-                const response = await axios.request(options);
-                console.log(response.data.result);
-                setResult(response.data.result)
-            } catch (error) {
-                console.error(error);
+          const options = {
+            method: 'POST',
+            url: 'https://chatgpt-gpt4-5.p.rapidapi.com/ask',
+            headers: {
+              'content-type': 'application/json',
+              'X-RapidAPI-Key': 'c0a2d3b7a8mshe348abd873a4e4ep17385djsn44c42053c9a5',
+              'X-RapidAPI-Host': 'chatgpt-gpt4-5.p.rapidapi.com'
+            },
+            data: {
+              query: `${translated} give me only pros and cons of this food`
             }
+          };
+          
+          try {
+            const response = await axios.request(options);
+            console.log(response.data.response);
+            setResult(response.data.response)
+          } catch (error) {
+            console.error(error);
+          }
         }
     };
 
     fetchData();
 }, [translated]);
+
 
 
   
